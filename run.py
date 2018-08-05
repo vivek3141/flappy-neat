@@ -1,8 +1,26 @@
-import gym, gym_ple
-import time
-env = gym.make("FlappyBird-v0")
-env.reset()
-for i in range(100):
-    env.render()
-    reward = env.step(env.action_space.sample())
-env.close()
+import neat
+import pickle
+from flappy import FlappyBirdApp
+
+
+def main():
+    config = neat.Config(
+        neat.DefaultGenome,
+        neat.DefaultReproduction,
+        neat.DefaultSpeciesSet,
+        neat.DefaultStagnation,
+        'config'
+    )
+
+    genomes = pickle.load(open('winner.pkl', 'rb'))
+
+    flappy = FlappyBirdApp([genomes], config)
+    flappy.play()
+    result = flappy.crash_info
+
+    for r, _ in result:
+        print(r['score'])
+
+
+if __name__ == "__main__":
+    main()
