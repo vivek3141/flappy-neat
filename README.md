@@ -18,8 +18,5 @@ To train, run
 To run, run <br />
 `python3 main.py run`
 
-## Debugging
-Open main.py in your editor and you can edit all the variables for the classes `Run` and `Train`.
-
 ## Credits
 @GianottiGustavo for the game and config.
