@@ -18,5 +18,8 @@ To train, run
 To run, run <br />
 `python3 main.py run`
 
+#Score
+I got a score of 123. Feel free to change the variables in the config file and try!
+
 ## Credits
 @GianottiGustavo for the game and config.
